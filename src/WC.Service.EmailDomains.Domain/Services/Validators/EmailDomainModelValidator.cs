@@ -8,6 +8,7 @@ public sealed class EmailDomainModelValidator : AbstractValidator<EmailDomainMod
     public EmailDomainModelValidator()
     {
         RuleFor(x => x.DomainName)
+            .NotEmpty()
             .Matches(".+\\..+");
     }
 }
