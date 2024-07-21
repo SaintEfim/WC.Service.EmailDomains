@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="8.0.0"/>
+    <PackageReference Include="WC.Library.Domain" Version="1.0.22"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WC.Service.EmailDomains.Data.Abstractions\WC.Service.EmailDomains.Data.Abstractions.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WC.Service.EmailDomains.Data.PostgreSql\WC.Service.EmailDomains.Data.PostgreSql.csproj"/>
+    <ProjectReference Include="..\WC.Service.EmailDomains.Domain.Abstractions\WC.Service.EmailDomains.Domain.Abstractions.csproj"/>
+  </ItemGroup>
+
+</Project>

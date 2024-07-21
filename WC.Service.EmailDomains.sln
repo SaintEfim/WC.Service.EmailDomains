@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{F837B00A-024A-40DF-8813-8925980AAFC6}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WC.Service.EmailDomains.Data", "src\WC.Service.EmailDomains.Data\WC.Service.EmailDomains.Data.csproj", "{E4BDCACC-B26E-4664-BB90-964C1FF7FFE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WC.Service.EmailDomains.Data.Abstractions", "src\WC.Service.EmailDomains.Data.Abstractions\WC.Service.EmailDomains.Data.Abstractions.csproj", "{63BC84F3-6B13-4096-80AD-70AEF00C4118}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WC.Service.EmailDomains.Data.PostgreSql", "src\WC.Service.EmailDomains.Data.PostgreSql\WC.Service.EmailDomains.Data.PostgreSql.csproj", "{B17D26BD-7CAC-4D6C-AEE3-817518555614}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WC.Service.EmailDomains.Domain", "src\WC.Service.EmailDomains.Domain\WC.Service.EmailDomains.Domain.csproj", "{1E3499B3-CF86-4B9B-979A-01D2C04D3C96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WC.Service.EmailDomains.Domain.Abstractions", "src\WC.Service.EmailDomains.Domain.Abstractions\WC.Service.EmailDomains.Domain.Abstractions.csproj", "{05354623-FD5B-40D1-BB14-5E3D70B3BFA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WC.Service.EmailDomains.API", "src\WC.Service.EmailDomains.API\WC.Service.EmailDomains.API.csproj", "{47582FDF-C3A6-42A7-987A-1965F49ACCDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4BDCACC-B26E-4664-BB90-964C1FF7FFE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4BDCACC-B26E-4664-BB90-964C1FF7FFE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4BDCACC-B26E-4664-BB90-964C1FF7FFE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4BDCACC-B26E-4664-BB90-964C1FF7FFE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63BC84F3-6B13-4096-80AD-70AEF00C4118}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63BC84F3-6B13-4096-80AD-70AEF00C4118}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63BC84F3-6B13-4096-80AD-70AEF00C4118}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63BC84F3-6B13-4096-80AD-70AEF00C4118}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B17D26BD-7CAC-4D6C-AEE3-817518555614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B17D26BD-7CAC-4D6C-AEE3-817518555614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B17D26BD-7CAC-4D6C-AEE3-817518555614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B17D26BD-7CAC-4D6C-AEE3-817518555614}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E3499B3-CF86-4B9B-979A-01D2C04D3C96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E3499B3-CF86-4B9B-979A-01D2C04D3C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E3499B3-CF86-4B9B-979A-01D2C04D3C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E3499B3-CF86-4B9B-979A-01D2C04D3C96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05354623-FD5B-40D1-BB14-5E3D70B3BFA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05354623-FD5B-40D1-BB14-5E3D70B3BFA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05354623-FD5B-40D1-BB14-5E3D70B3BFA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05354623-FD5B-40D1-BB14-5E3D70B3BFA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47582FDF-C3A6-42A7-987A-1965F49ACCDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47582FDF-C3A6-42A7-987A-1965F49ACCDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47582FDF-C3A6-42A7-987A-1965F49ACCDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47582FDF-C3A6-42A7-987A-1965F49ACCDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
