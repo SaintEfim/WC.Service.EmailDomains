@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using WC.Library.Domain.Validators;
 using WC.Service.EmailDomains.Domain.Models;
 
-namespace WC.Service.EmailDomains.Domain.Services.Validators;
+namespace WC.Service.EmailDomains.Domain.Services.Validators.Create;
 
 public sealed class EmailDomainCreateModelValidator
     : AbstractValidator<EmailDomainModel>,

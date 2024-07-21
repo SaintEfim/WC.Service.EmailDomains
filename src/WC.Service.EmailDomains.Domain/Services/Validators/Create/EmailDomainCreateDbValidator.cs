@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using WC.Service.EmailDomains.Domain.Models;
 
-namespace WC.Service.EmailDomains.Domain.Services.Validators;
+namespace WC.Service.EmailDomains.Domain.Services.Validators.Create;
 
 public sealed class EmailDomainCreateDbValidator : AbstractValidator<EmailDomainModel>
 {
