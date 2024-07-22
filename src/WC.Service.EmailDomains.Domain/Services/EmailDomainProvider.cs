@@ -18,4 +18,12 @@ public class EmailDomainProvider
         : base(mapper, logger, repository)
     {
     }
+
+    public async Task<bool> DoesEmailDomainWithDomainNameExist(
+        string domainName,
+        CancellationToken cancellationToken = default)
+    {
+        var emailDomains = await Repository.Get(cancellationToken: cancellationToken);
+        return emailDomains.Any(x => x.DomainName == domainName);
+    }
 }
