@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "WC.Service.EmailDomains.gRPC.Client.Clients";
+
+package email_domains;
+
+service GreeterEmailDomains {
+  rpc DoesEmailDomainWithDomainNameExist (DoesEmailDomainWithDomainNameExistRequest) returns (DoesEmailDomainWithDomainNameExistResponse);
+}
+
+message DoesEmailDomainWithDomainNameExistRequest {
+  string DomainName = 1;
+}
+
+message DoesEmailDomainWithDomainNameExistResponse {
+  bool exists = 1;
+}
