@@ -9,6 +9,6 @@ public sealed class EmailDomainModelValidator : AbstractValidator<EmailDomainMod
     {
         RuleFor(x => x.DomainName)
             .NotEmpty()
-            .Matches(".+\\..+");
+            .Matches(@"^[a-zA-Z0-9-]{1,}\.[a-zA-Z]{1,}$");
     }
 }

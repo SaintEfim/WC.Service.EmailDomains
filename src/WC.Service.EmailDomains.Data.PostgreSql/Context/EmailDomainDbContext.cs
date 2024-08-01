@@ -11,10 +11,7 @@ public sealed class EmailDomainDbContext : DbContext
         IHostEnvironment environment)
         : base(options)
     {
-        if (environment.IsDevelopment())
-        {
-            Database.Migrate();
-        }
+        Database.Migrate();
     }
 
     public DbSet<EmailDomainEntity> EmailDomains { get; set; } = null!;
