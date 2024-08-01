@@ -6,5 +6,5 @@ namespace WC.Service.EmailDomains.API.Models;
 public class EmailDomainDto : DtoBase
 {
     [Required]
-    public required string DomainName { get; set; } = string.Empty;
+    public required string DomainName { get; set; }
 }

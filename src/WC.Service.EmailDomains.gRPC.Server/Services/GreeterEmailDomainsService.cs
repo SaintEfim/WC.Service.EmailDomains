@@ -13,12 +13,12 @@ public class GreeterEmailDomainsService : GreeterEmailDomains.GreeterEmailDomain
         _provider = provider;
     }
 
-    public override async Task<DoesEmailDomainWithDomainNameExistResponse> DoesEmailDomainWithDomainNameExist(
-        DoesEmailDomainWithDomainNameExistRequest request,
+    public override async Task<DoesEmailDomainExistResponse> DoesEmailDomainExist(
+        DoesEmailDomainExistRequest request,
         ServerCallContext context)
     {
-        var exists = await _provider.DoesEmailDomainWithDomainNameExist(request.DomainName, context.CancellationToken);
+        var exists = await _provider.DoesEmailDomainExist(request.DomainName, context.CancellationToken);
 
-        return new DoesEmailDomainWithDomainNameExistResponse { Exists = exists };
+        return new DoesEmailDomainExistResponse { Exists = exists };
     }
 }

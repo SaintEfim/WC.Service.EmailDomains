@@ -5,13 +5,13 @@ option csharp_namespace = "WC.Service.EmailDomains.gRPC.Server.Services";
 package email_domains;
 
 service GreeterEmailDomains {
-  rpc DoesEmailDomainWithDomainNameExist (DoesEmailDomainWithDomainNameExistRequest) returns (DoesEmailDomainWithDomainNameExistResponse);
+  rpc DoesEmailDomainExist (DoesEmailDomainExistRequest) returns (DoesEmailDomainExistResponse);
 }
 
-message DoesEmailDomainWithDomainNameExistRequest {
-  string DomainName = 1;
+message DoesEmailDomainExistRequest {
+  string domain_name = 1;
 }
 
-message DoesEmailDomainWithDomainNameExistResponse {
+message DoesEmailDomainExistResponse {
   bool exists = 1;
 }

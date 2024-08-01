@@ -19,7 +19,7 @@ public class EmailDomainProvider
     {
     }
 
-    public async Task<bool> DoesEmailDomainWithDomainNameExist(
+    public async Task<bool> DoesEmailDomainExist(
         string domainName,
         CancellationToken cancellationToken = default)
     {

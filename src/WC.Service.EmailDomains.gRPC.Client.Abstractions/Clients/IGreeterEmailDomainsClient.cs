@@ -1,10 +1,10 @@
-﻿using WC.Service.EmailDomains.gRPC.Client.Models.DoesEmailDomainWithDomainNameExist;
+﻿using WC.Service.EmailDomains.gRPC.Client.Models.DoesEmailDomainExist;
 
 namespace WC.Service.EmailDomains.gRPC.Client.Clients;
 
 public interface IGreeterEmailDomainsClient
 {
-    Task<DoesEmailDomainWithDomainNameExistResponseModel> DoesEmailDomainWithDomainNameExist(
-        DoesEmailDomainWithDomainNameExistRequestModel request,
+    Task<DoesEmailDomainExistResponseModel> DoesEmailDomainWithDomainNameExist(
+        DoesEmailDomainExistRequestModel request,
         CancellationToken cancellationToken = default);
 }
