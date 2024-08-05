@@ -1,7 +1,7 @@
 ﻿using Grpc.Core;
 using WC.Service.EmailDomains.Domain.Services;
 
-namespace WC.Service.EmailDomains.gRPC.Server.Services;
+namespace WC.Service.EmailDomains.API.gRPC.Services;
 
 public class GreeterEmailDomainsService : GreeterEmailDomains.GreeterEmailDomainsBase
 {

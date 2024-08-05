@@ -18,8 +18,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WC.Service.EmailDomains.Dom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WC.Service.EmailDomains.API", "src\WC.Service.EmailDomains.API\WC.Service.EmailDomains.API.csproj", "{47582FDF-C3A6-42A7-987A-1965F49ACCDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WC.Service.EmailDomains.gRPC.Server", "src\WC.Service.EmailDomains.gRPC.Server\WC.Service.EmailDomains.gRPC.Server.csproj", "{D5409555-EBD9-4A50-A8F6-5DC371029A43}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WC.Service.EmailDomains.gRPC.Client", "src\WC.Service.EmailDomains.gRPC.Client\WC.Service.EmailDomains.gRPC.Client.csproj", "{B97364F1-F0FA-4AE7-B644-22D45DD1EB67}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WC.Service.EmailDomains.gRPC.Client.Abstractions", "src\WC.Service.EmailDomains.gRPC.Client.Abstractions\WC.Service.EmailDomains.gRPC.Client.Abstractions.csproj", "{56543CF2-4EE8-4B66-8875-64A3F3B9AEA2}"
@@ -54,10 +52,6 @@ Global
 		{47582FDF-C3A6-42A7-987A-1965F49ACCDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47582FDF-C3A6-42A7-987A-1965F49ACCDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47582FDF-C3A6-42A7-987A-1965F49ACCDC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D5409555-EBD9-4A50-A8F6-5DC371029A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D5409555-EBD9-4A50-A8F6-5DC371029A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D5409555-EBD9-4A50-A8F6-5DC371029A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D5409555-EBD9-4A50-A8F6-5DC371029A43}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B97364F1-F0FA-4AE7-B644-22D45DD1EB67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B97364F1-F0FA-4AE7-B644-22D45DD1EB67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B97364F1-F0FA-4AE7-B644-22D45DD1EB67}.Release|Any CPU.ActiveCfg = Release|Any CPU
