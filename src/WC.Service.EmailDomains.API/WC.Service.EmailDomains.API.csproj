@@ -21,7 +21,13 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="WC.Library.Web" Version="1.0.26"/>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.65.0"/>
+    <PackageReference Include="Grpc.Tools" Version="2.65.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Google.Protobuf" Version="3.27.3"/>
+    <PackageReference Include="WC.Library.Web" Version="1.0.27"/>
   </ItemGroup>
 
   <ItemGroup>
@@ -29,7 +35,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WC.Service.EmailDomains.Domain\WC.Service.EmailDomains.Domain.csproj"/>
+
+    <Protobuf Include="gRPC\Protos\greet_email_domains.proto" GrpcServices="Server"/>
   </ItemGroup>
 
 </Project>
