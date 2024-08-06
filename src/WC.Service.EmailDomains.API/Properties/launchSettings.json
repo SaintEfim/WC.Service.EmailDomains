@@ -4,7 +4,7 @@
     "WC.Service.EmailDomains.API": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": false,
+      "launchBrowser": true,
       "launchUrl": "swagger",
       "applicationUrl": "http://localhost:1002; http://localhost:2002",
       "environmentVariables": {
