@@ -11,7 +11,6 @@ COPY src/WC.Service.EmailDomains.Domain.Abstractions/WC.Service.EmailDomains.Dom
 RUN dotnet restore src/WC.Service.EmailDomains.API/WC.Service.EmailDomains.API.csproj
 
 COPY src/ .
-
 WORKDIR /src/WC.Service.EmailDomains.API
 RUN dotnet build -c Release -o /app/build
 
