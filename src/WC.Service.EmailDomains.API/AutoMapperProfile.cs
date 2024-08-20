@@ -14,5 +14,7 @@ public class AutoMapperProfile : Profile
         CreateMap<EmailDomainCreateDto, EmailDomainModel>();
 
         CreateMap<EmailDomainModel, CreateActionResultDto>();
+
+        CreateMap<EmailDomainUpdateDto, EmailDomainModel>();
     }
 }

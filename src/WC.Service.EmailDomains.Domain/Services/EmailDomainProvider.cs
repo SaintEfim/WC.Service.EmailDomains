@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.Logging;
+using WC.Library.Data.Services;
 using WC.Library.Domain.Services;
 using WC.Service.EmailDomains.Data.Models;
 using WC.Service.EmailDomains.Data.Repositories;
@@ -21,9 +22,10 @@ public class EmailDomainProvider
 
     public async Task<bool> DoesEmailDomainExist(
         string domainName,
+        IWcTransaction? transaction = default,
         CancellationToken cancellationToken = default)
     {
-        var emailDomains = await Repository.Get(cancellationToken: cancellationToken);
+        var emailDomains = await Repository.Get(transaction: transaction, cancellationToken: cancellationToken);
         return emailDomains.Any(x => x.DomainName == domainName);
     }
 }

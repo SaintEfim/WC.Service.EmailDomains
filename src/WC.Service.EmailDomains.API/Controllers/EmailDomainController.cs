@@ -42,7 +42,7 @@ public class EmailDomainController
         bool withIncludes = false,
         CancellationToken cancellationToken = default)
     {
-        return Ok(await GetMany(withIncludes, cancellationToken));
+        return Ok(await GetMany(withIncludes, cancellationToken: cancellationToken));
     }
 
     /// <summary>
@@ -59,7 +59,7 @@ public class EmailDomainController
         Guid id,
         CancellationToken cancellationToken = default)
     {
-        return Ok(await GetOneById(id, true, cancellationToken));
+        return Ok(await GetOneById(id, true, cancellationToken: cancellationToken));
     }
 
     /// <summary>
@@ -92,10 +92,10 @@ public class EmailDomainController
     [SwaggerResponse(Status404NotFound, typeof(ErrorDto))]
     public async Task<IActionResult> EmailDomainUpdate(
         Guid id,
-        [FromBody] JsonPatchDocument<EmailDomainDto> patchDocument,
+        [FromBody] JsonPatchDocument<EmailDomainUpdateDto> patchDocument,
         CancellationToken cancellationToken = default)
     {
-        return Ok(await Update(id, patchDocument, cancellationToken));
+        return Ok(await Update(id, patchDocument, cancellationToken: cancellationToken));
     }
 
     /// <summary>
@@ -113,6 +113,6 @@ public class EmailDomainController
         Guid id,
         CancellationToken cancellationToken = default)
     {
-        return await Delete(id, cancellationToken);
+        return await Delete(id, cancellationToken: cancellationToken);
     }
 }
