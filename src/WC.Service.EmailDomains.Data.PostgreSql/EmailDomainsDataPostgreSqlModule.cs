@@ -10,6 +10,8 @@ public class EmailDomainsDataPostgreSqlModule : Module
     protected override void Load(
         ContainerBuilder builder)
     {
+        builder.RegisterModule<EmailDomainsDataModule>();
+
         builder.RegisterAssemblyTypes(ThisAssembly)
             .AsClosedTypesOf(typeof(IRepository<>))
             .AsImplementedInterfaces();

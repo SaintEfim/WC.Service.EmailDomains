@@ -10,18 +10,18 @@ public sealed class EmailDomainCreateDbValidator : AbstractValidator<EmailDomain
     {
         RuleFor(x => x)
             .CustomAsync(async (
-                emailDomainModel,
+                emailDomain,
                 context,
                 cancellationToken) =>
             {
                 var positions = await emailDomainProvider.Get(cancellationToken: cancellationToken);
 
-                var duplicatePosition = positions.Any(x => x.DomainName == emailDomainModel.DomainName);
+                var duplicatePosition = positions.Any(x => x.DomainName == emailDomain.DomainName);
 
                 if (duplicatePosition)
                 {
                     context.AddFailure(nameof(EmailDomainModel.DomainName),
-                        $"Email domain with this {emailDomainModel.DomainName} already exists.");
+                        $"Email domain with this {emailDomain.DomainName} already exists.");
                 }
             });
     }

@@ -17,7 +17,8 @@ public class GreeterEmailDomainsService : GreeterEmailDomains.GreeterEmailDomain
         DoesEmailDomainExistRequest request,
         ServerCallContext context)
     {
-        var exists = await _provider.DoesEmailDomainExist(request.DomainName, context.CancellationToken);
+        var exists =
+            await _provider.DoesEmailDomainExist(request.DomainName, cancellationToken: context.CancellationToken);
 
         return new DoesEmailDomainExistResponse { Exists = exists };
     }
