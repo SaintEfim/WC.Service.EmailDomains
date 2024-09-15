@@ -1,4 +1,5 @@
 ﻿using Grpc.Core;
+using WC.Library.Shared.Exceptions;
 using WC.Service.EmailDomains.Domain.Services;
 
 namespace WC.Service.EmailDomains.API.gRPC.Services;
@@ -17,9 +18,16 @@ public class GreeterEmailDomainsService : GreeterEmailDomains.GreeterEmailDomain
         DoesEmailDomainExistRequest request,
         ServerCallContext context)
     {
-        var exists =
-            await _provider.DoesEmailDomainExist(request.DomainName, cancellationToken: context.CancellationToken);
+        try
+        {
+            var exists =
+                await _provider.DoesEmailDomainExist(request.DomainName, cancellationToken: context.CancellationToken);
 
-        return new DoesEmailDomainExistResponse { Exists = exists };
+            return new DoesEmailDomainExistResponse { Exists = exists };
+        }
+        catch (NotFoundException ex)
+        {
+            throw new RpcException(new Status(StatusCode.NotFound, $"{ex.Message}"));
+        }
     }
 }
