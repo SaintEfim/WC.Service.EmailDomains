@@ -1,5 +1,4 @@
-﻿using System.Text.Json;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.Logging;
 using WC.Service.EmailDomains.Domain.Models;
 using WC.Service.EmailDomains.Domain.Services;
 
@@ -21,9 +20,10 @@ public class CreateDomain
     public async Task Create(
         CancellationToken cancellationToken = default)
     {
-        var adminEmailDomains = JsonSerializer.Deserialize<string[]>(
-            Environment.GetEnvironmentVariable("EMAIL_DOMAIN") ?? "[\"admin.com\"]"
-        );
+        var adminEmailDomains = (Environment.GetEnvironmentVariable("EMAIL_DOMAINS") ?? "admin.com")
+            .Split(',', StringSplitOptions.RemoveEmptyEntries)
+            .Select(domain => domain.Trim())
+            .ToArray();
 
         foreach (var emailDomain in adminEmailDomains!)
         {
