@@ -22,7 +22,7 @@ public class CreateDomain
     {
         var registrationPayload = new EmailDomainModel
         {
-            DomainName = Environment.GetEnvironmentVariable("EMAIL_DOMAIN") ?? "admin.com"
+            DomainName = Environment.GetEnvironmentVariable("ADMIN_EMAIL_DOMAIN") ?? "admin.com"
         };
 
         try
