@@ -14,13 +14,23 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Build Docker Image
+      - name: Build Docker Image for API
         uses: docker/build-push-action@v3
         with:
           context: .
           file: ./src/WC.Service.EmailDomains.API/Dockerfile
           push: false
           tags: test/app:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build Docker Image for CreateDomain
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./src/WC.Service.EmailDomains.CreateDomain/Dockerfile
+          push: false
+          tags: test/app-createdomain:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -41,13 +51,23 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and Push Docker Image
+      - name: Push Docker Image for API
         uses: docker/build-push-action@v3
         with:
           context: .
           file: ./src/WC.Service.EmailDomains.API/Dockerfile
           push: true
           tags: saintefim/wc-service-emaildomains:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Push Docker Image for CreateDomain
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./src/WC.Service.EmailDomains.CreateDomain/Dockerfile
+          push: true
+          tags: saintefim/wc-service-emaildomains-createdomain:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
