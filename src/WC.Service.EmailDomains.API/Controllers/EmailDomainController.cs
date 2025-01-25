@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using NSwag.Annotations;
@@ -14,6 +15,7 @@ namespace WC.Service.EmailDomains.API.Controllers;
 /// <summary>
 ///     The email domain management controller.
 /// </summary>
+[Authorize(Roles = "Admin")]
 [Route("api/v1/email-domains")]
 public class EmailDomainController
     : CrudApiControllerBase<EmailDomainController, IEmailDomainManager, IEmailDomainProvider, EmailDomainModel,
