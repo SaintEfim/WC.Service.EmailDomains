@@ -15,7 +15,6 @@ namespace WC.Service.EmailDomains.API.Controllers;
 /// <summary>
 ///     The email domain management controller.
 /// </summary>
-[Authorize(Roles = "Admin")]
 [Route("api/v1/email-domains")]
 public class EmailDomainController
     : CrudApiControllerBase<EmailDomainController, IEmailDomainManager, IEmailDomainProvider, EmailDomainModel,
@@ -54,6 +53,7 @@ public class EmailDomainController
     /// <param name="cancellationToken">The operation cancellation token.</param>
     /// <returns></returns>
     [HttpGet("{id:guid}", Name = nameof(EmailDomainGetById))]
+    [Authorize(Roles = "Admin")]
     [OpenApiOperation(nameof(EmailDomainGetById))]
     [SwaggerResponse(Status200OK, typeof(EmailDomainDto))]
     [SwaggerResponse(Status404NotFound, typeof(ErrorDto))]
@@ -71,6 +71,7 @@ public class EmailDomainController
     /// <param name="cancellationToken">The operation cancellation token</param>
     /// <returns>The result of creation. <see cref="CreateActionResultDto"/></returns>
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     [OpenApiOperation(nameof(EmailDomainCreate))]
     [SwaggerResponse(Status201Created, typeof(CreateActionResultDto))]
     public Task<IActionResult> EmailDomainCreate(
@@ -89,6 +90,7 @@ public class EmailDomainController
     /// <param name="cancellationToken">The operation cancellation token.</param>
     /// <returns></returns>
     [HttpPatch("{id:guid}")]
+    [Authorize(Roles = "Admin")]
     [OpenApiOperation(nameof(EmailDomainUpdate))]
     [SwaggerResponse(Status200OK, typeof(void))]
     [SwaggerResponse(Status404NotFound, typeof(ErrorDto))]
@@ -107,6 +109,7 @@ public class EmailDomainController
     /// <param name="cancellationToken">The operation cancellation token.</param>
     /// <returns></returns>
     [HttpDelete("{id:guid}")]
+    [Authorize(Roles = "Admin")]
     [OpenApiOperation(nameof(EmailDomainDelete))]
     [SwaggerResponse(Status204NoContent, typeof(void))]
     [SwaggerResponse(Status404NotFound, typeof(ErrorDto))]
