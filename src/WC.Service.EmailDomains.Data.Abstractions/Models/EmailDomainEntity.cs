@@ -1,4 +1,5 @@
-﻿using WC.Library.Data.Models;
+﻿using Sieve.Attributes;
+using WC.Library.Data.Models;
 
 namespace WC.Service.EmailDomains.Data.Models;
 
