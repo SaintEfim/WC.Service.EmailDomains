@@ -5,9 +5,9 @@ using WC.Service.EmailDomains.Data.Models;
 
 namespace WC.Service.EmailDomains.Data.Profile;
 
-public class EmailDomainEntityProfile : SieveProcessor
+public class EmailDomainEntityFilterProfile : SieveProcessor
 {
-    public EmailDomainEntityProfile(
+    public EmailDomainEntityFilterProfile(
         IOptions<SieveOptions> options)
         : base(options)
     {

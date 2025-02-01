@@ -12,7 +12,7 @@ public class EmailDomainsDataModule : Module
     {
         builder.RegisterModule<WcLibraryDataModule>();
 
-        builder.RegisterType<EmailDomainEntityProfile>()
+        builder.RegisterType<EmailDomainEntityFilterProfile>()
             .As<ISieveProcessor>()
             .InstancePerLifetimeScope();
     }
