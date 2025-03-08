@@ -35,6 +35,16 @@ internal static class Program
         builder.RegisterModule<EmailDomainsDomainModule>();
         builder.RegisterType<CreateDomain>()
             .AsSelf();
+        builder.Register(context =>
+            {
+                var configuration = context.Resolve<IConfiguration>();
+                var options = new EmailDomainsOptions();
+                configuration.GetSection("EmailDomains").Bind(options);
+                return options;
+            })
+            .As<EmailDomainsOptions>()
+            .SingleInstance();
+
 
         var container = builder.Build();
 

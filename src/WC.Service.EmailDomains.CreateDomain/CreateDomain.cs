@@ -8,24 +8,24 @@ public class CreateDomain
 {
     private readonly IEmailDomainManager _emailDomainManager;
     private readonly ILogger<CreateDomain> _logger;
+    private readonly EmailDomainsOptions _options;
 
     public CreateDomain(
         ILogger<CreateDomain> logger,
-        IEmailDomainManager emailDomainManager)
+        IEmailDomainManager emailDomainManager,
+        EmailDomainsOptions options)
     {
         _emailDomainManager = emailDomainManager;
+        _options = options;
         _logger = logger;
     }
 
     public async Task Create(
         CancellationToken cancellationToken = default)
     {
-        var adminEmailDomains = (Environment.GetEnvironmentVariable("EMAIL_DOMAINS") ?? "admin.com")
-            .Split(',', StringSplitOptions.RemoveEmptyEntries)
-            .Select(domain => domain.Trim())
-            .ToArray();
+        var adminEmailDomains = _options.Domains;
 
-        foreach (var emailDomain in adminEmailDomains!)
+        foreach (var emailDomain in adminEmailDomains)
         {
             var registrationPayload = new EmailDomainModel
             {
