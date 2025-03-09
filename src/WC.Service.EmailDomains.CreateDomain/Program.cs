@@ -23,6 +23,7 @@ internal static class Program
         var configuration = new ConfigurationBuilder().SetBasePath(projectPath)
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
             .AddJsonFile($"appsettings.{environment}.json", optional: true, reloadOnChange: true)
+            .AddEnvironmentVariables()
             .Build();
 
         serviceCollection.AddSingleton<IConfiguration>(configuration);
