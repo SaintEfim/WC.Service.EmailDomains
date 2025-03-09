@@ -38,10 +38,11 @@ internal static class Program
         builder.Register(context =>
             {
                 var configuration = context.Resolve<IConfiguration>();
-                var options = new AdminSettingsOptions();
-                configuration.GetSection("AdminSettings")
-                    .Bind(options);
-                return options;
+                var emailDomainsSection = configuration.GetSection("AdminSettings:EmailDomains");
+                var domains = emailDomainsSection.GetChildren()
+                    .Select(x => x.Value)
+                    .ToArray();
+                return new AdminSettingsOptions { EmailDomains = domains! };
             })
             .As<AdminSettingsOptions>()
             .SingleInstance();
