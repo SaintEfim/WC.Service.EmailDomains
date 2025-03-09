@@ -8,12 +8,12 @@ public class CreateDomain
 {
     private readonly IEmailDomainManager _emailDomainManager;
     private readonly ILogger<CreateDomain> _logger;
-    private readonly EmailDomainsOptions _options;
+    private readonly AdminSettingsOptions _options;
 
     public CreateDomain(
         ILogger<CreateDomain> logger,
         IEmailDomainManager emailDomainManager,
-        EmailDomainsOptions options)
+        AdminSettingsOptions options)
     {
         _emailDomainManager = emailDomainManager;
         _options = options;
@@ -23,14 +23,11 @@ public class CreateDomain
     public async Task Create(
         CancellationToken cancellationToken = default)
     {
-        var adminEmailDomains = _options.Domains;
+        var adminEmailDomains = _options.EmailDomains;
 
         foreach (var emailDomain in adminEmailDomains)
         {
-            var registrationPayload = new EmailDomainModel
-            {
-                DomainName = emailDomain
-            };
+            var registrationPayload = new EmailDomainModel { DomainName = emailDomain };
 
             try
             {

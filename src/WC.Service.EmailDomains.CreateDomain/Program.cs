@@ -14,7 +14,6 @@ internal static class Program
         var serviceCollection = new ServiceCollection();
 
         serviceCollection.AddLogging(loggingBuilder => { loggingBuilder.AddConsole(); });
-
         serviceCollection.AddAutoMapper(typeof(AutoMapperProfile));
 
         var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") ?? "Development";
@@ -24,7 +23,6 @@ internal static class Program
         var configuration = new ConfigurationBuilder().SetBasePath(projectPath)
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
             .AddJsonFile($"appsettings.{environment}.json", optional: true, reloadOnChange: true)
-            .AddEnvironmentVariables()
             .Build();
 
         serviceCollection.AddSingleton<IConfiguration>(configuration);
@@ -39,13 +37,13 @@ internal static class Program
         builder.Register(context =>
             {
                 var configuration = context.Resolve<IConfiguration>();
-                var options = new EmailDomainsOptions();
-                configuration.GetSection("EmailDomains").Bind(options);
+                var options = new AdminSettingsOptions();
+                configuration.GetSection("AdminSettings")
+                    .Bind(options);
                 return options;
             })
-            .As<EmailDomainsOptions>()
+            .As<AdminSettingsOptions>()
             .SingleInstance();
-
 
         var container = builder.Build();
 
