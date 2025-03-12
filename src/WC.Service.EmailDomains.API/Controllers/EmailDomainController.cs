@@ -42,7 +42,7 @@ public class EmailDomainController
     [OpenApiOperation(nameof(EmailDomainGet))]
     [SwaggerResponse(Status200OK, typeof(List<EmailDomainDto>))]
     public async Task<ActionResult<List<EmailDomainDto>>> EmailDomainGet(
-        [FromQuery] SieveModel? filter = default,
+        [FromQuery] SieveModel filter,
         bool withIncludes = false,
         CancellationToken cancellationToken = default)
     {
