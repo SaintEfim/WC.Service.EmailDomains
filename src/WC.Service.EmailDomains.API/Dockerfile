@@ -1,7 +1,8 @@
 ﻿FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-RUN dotnet tool install --global NSwag.ConsoleCore
+RUN dotnet tool install --global NSwag.ConsoleCore \
+    && export PATH="$PATH:/root/.dotnet/tools"
 
 COPY src/WC.Service.EmailDomains.API/WC.Service.EmailDomains.API.csproj src/WC.Service.EmailDomains.API/
 COPY src/WC.Service.EmailDomains.Domain/WC.Service.EmailDomains.Domain.csproj src/WC.Service.EmailDomains.Domain/
