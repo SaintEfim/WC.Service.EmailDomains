@@ -44,9 +44,5 @@
   <ItemGroup>
     <Protobuf Include="gRPC\Protos\greet_email_domains.proto" GrpcServices="Server"/>
   </ItemGroup>
-
-  <Target Name="GenerateSwagger" AfterTargets="Build">
-    <Exec Command="nswag run $(ProjectDir)WC.Service.EmailDomains.API.nswag" />
-  </Target>
   
 </Project>
