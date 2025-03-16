@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="8.2.0" />
-    <PackageReference Include="WC.Library.Domain" Version="1.0.36" />
+    <PackageReference Include="WC.Library.Domain" Version="1.0.37" />
   </ItemGroup>
 
   <ItemGroup>
