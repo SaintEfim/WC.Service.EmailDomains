@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using WC.Service.EmailDomains.Domain.Models;
-using WC.Service.EmailDomains.Domain.Services;
+using WC.Service.EmailDomains.Domain.Services.EmailDomain;
 
 namespace WC.Service.EmailDomains.CreateDomain;
 

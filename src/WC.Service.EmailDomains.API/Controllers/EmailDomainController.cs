@@ -6,9 +6,9 @@ using NSwag.Annotations;
 using Sieve.Models;
 using WC.Library.Web.Controllers;
 using WC.Library.Web.Models;
-using WC.Service.EmailDomains.API.Models;
+using WC.Service.EmailDomains.API.Models.EmailDomain;
 using WC.Service.EmailDomains.Domain.Models;
-using WC.Service.EmailDomains.Domain.Services;
+using WC.Service.EmailDomains.Domain.Services.EmailDomain;
 using static Microsoft.AspNetCore.Http.StatusCodes;
 
 namespace WC.Service.EmailDomains.API.Controllers;
