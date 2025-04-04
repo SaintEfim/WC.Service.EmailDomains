@@ -6,7 +6,7 @@ using WC.Service.EmailDomains.Data.Models;
 using WC.Service.EmailDomains.Data.Repositories;
 using WC.Service.EmailDomains.Domain.Models;
 
-namespace WC.Service.EmailDomains.Domain.Services;
+namespace WC.Service.EmailDomains.Domain.Services.EmailDomain;
 
 public class EmailDomainManager
     : DataManagerBase<EmailDomainManager, IEmailDomainRepository, EmailDomainModel, EmailDomainEntity>,

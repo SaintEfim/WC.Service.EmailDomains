@@ -1,6 +1,6 @@
 ﻿using Grpc.Core;
 using WC.Library.Shared.Exceptions;
-using WC.Service.EmailDomains.Domain.Services;
+using WC.Service.EmailDomains.Domain.Services.EmailDomain;
 
 namespace WC.Service.EmailDomains.API.gRPC.Services;
 

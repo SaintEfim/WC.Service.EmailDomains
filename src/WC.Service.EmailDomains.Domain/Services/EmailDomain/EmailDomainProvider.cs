@@ -6,7 +6,7 @@ using WC.Service.EmailDomains.Data.Models;
 using WC.Service.EmailDomains.Data.Repositories;
 using WC.Service.EmailDomains.Domain.Models;
 
-namespace WC.Service.EmailDomains.Domain.Services;
+namespace WC.Service.EmailDomains.Domain.Services.EmailDomain;
 
 public class EmailDomainProvider
     : DataProviderBase<EmailDomainProvider, IEmailDomainRepository, EmailDomainModel, EmailDomainEntity>,
@@ -22,7 +22,7 @@ public class EmailDomainProvider
 
     public async Task<bool> DoesEmailDomainExist(
         string domainName,
-        IWcTransaction? transaction = default,
+        IWcTransaction? transaction = null,
         CancellationToken cancellationToken = default)
     {
         var emailDomains = await Repository.Get(transaction: transaction, cancellationToken: cancellationToken);
