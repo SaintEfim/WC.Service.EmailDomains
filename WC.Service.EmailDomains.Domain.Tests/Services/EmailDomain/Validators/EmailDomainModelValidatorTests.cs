@@ -39,8 +39,7 @@ public class EmailDomainModelValidatorTests
         return Check_Main_Data(NewModelFunc,
             r => r.ShouldHaveAnyValidationError()
                 .WithErrorCode("NotEmptyValidator")
-                .WithMessageArgument("PropertyPath",
-                    nameof(EmailDomainModel.DomainName))
+                .When(x => x.PropertyName == nameof(EmailDomainModel.DomainName))
                 .Only());
 
         EmailDomainModel NewModelFunc()
@@ -58,8 +57,7 @@ public class EmailDomainModelValidatorTests
         return Check_Main_Data(NewModelFunc,
             r => r.ShouldHaveAnyValidationError()
                 .WithErrorCode("LengthValidator")
-                .WithMessageArgument("PropertyPath",
-                    nameof(EmailDomainModel.DomainName))
+                .When(x => x.PropertyName == nameof(EmailDomainModel.DomainName))
                 .Only());
 
         EmailDomainModel NewModelFunc()
@@ -78,8 +76,7 @@ public class EmailDomainModelValidatorTests
         return Check_Main_Data(NewModelFunc,
             r => r.ShouldHaveAnyValidationError()
                 .WithErrorCode("LengthValidator")
-                .WithMessageArgument("PropertyPath",
-                    nameof(EmailDomainModel.DomainName))
+                .When(x => x.PropertyName == nameof(EmailDomainModel.DomainName))
                 .Only());
 
         EmailDomainModel NewModelFunc()
@@ -98,8 +95,7 @@ public class EmailDomainModelValidatorTests
         return Check_Main_Data(NewModelFunc,
             r => r.ShouldHaveAnyValidationError()
                 .WithErrorCode("RegularExpressionValidator")
-                .WithMessageArgument("PropertyPath",
-                    nameof(EmailDomainModel.DomainName))
+                .When(x => x.PropertyName == nameof(EmailDomainModel.DomainName))
                 .Only());
 
         EmailDomainModel NewModelFunc()
