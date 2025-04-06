@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using Microsoft.Extensions.Logging;
+using WC.Library.Data.Services;
 using WC.Library.Domain.Services;
 using WC.Service.EmailDomains.Data.Models;
 using WC.Service.EmailDomains.Data.Repositories;
@@ -19,5 +20,15 @@ public class EmailDomainManager
         IEnumerable<IValidator> validators)
         : base(mapper, logger, repository, validators)
     {
+    }
+
+    protected override Task<EmailDomainModel> CreateAction(
+        EmailDomainModel model,
+        IWcTransaction? transaction = null,
+        CancellationToken cancellationToken = default)
+    {
+        model.DomainName = model.DomainName.ToLower();
+
+        return base.CreateAction(model, transaction, cancellationToken);
     }
 }

@@ -2,11 +2,11 @@
 using WC.Service.EmailDomains.Data.Repositories;
 using WC.Service.EmailDomains.Domain.Models;
 
-namespace WC.Service.EmailDomains.Domain.Services.EmailDomain.Validators.Create;
+namespace WC.Service.EmailDomains.Domain.Services.EmailDomain.Validators.Update;
 
-public sealed class EmailDomainCreateDbValidator : AbstractValidator<EmailDomainModel>
+public sealed class EmailDomainUpdateDbValidator : AbstractValidator<EmailDomainModel>
 {
-    public EmailDomainCreateDbValidator(
+    public EmailDomainUpdateDbValidator(
         IEmailDomainRepository repository)
     {
         RuleFor(x => x)

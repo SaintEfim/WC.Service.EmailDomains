@@ -15,6 +15,7 @@ public class AutoMapperProfile : Profile
 
         CreateMap<EmailDomainModel, CreateActionResultDto>();
 
-        CreateMap<EmailDomainUpdateDto, EmailDomainModel>();
+        CreateMap<EmailDomainUpdateDto, EmailDomainModel>()
+            .ReverseMap();
     }
 }

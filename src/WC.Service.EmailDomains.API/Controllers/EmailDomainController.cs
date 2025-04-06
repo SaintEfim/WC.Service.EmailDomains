@@ -102,7 +102,7 @@ public class EmailDomainController
         [FromBody] JsonPatchDocument<EmailDomainUpdateDto> patchDocument,
         CancellationToken cancellationToken = default)
     {
-        return Ok(await Update(id, patchDocument, cancellationToken: cancellationToken));
+        return await Update(id, patchDocument, cancellationToken: cancellationToken);
     }
 
     /// <summary>

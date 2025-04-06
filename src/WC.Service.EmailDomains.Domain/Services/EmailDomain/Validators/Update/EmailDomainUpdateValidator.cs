@@ -3,13 +3,13 @@ using Microsoft.Extensions.DependencyInjection;
 using WC.Library.Domain.Validators;
 using WC.Service.EmailDomains.Domain.Models;
 
-namespace WC.Service.EmailDomains.Domain.Services.EmailDomain.Validators.Create;
+namespace WC.Service.EmailDomains.Domain.Services.EmailDomain.Validators.Update;
 
-public sealed class EmailDomainCreateValidator
+public sealed class EmailDomainCreateModelValidator
     : AbstractValidator<EmailDomainModel>,
         IDomainCreateValidator
 {
-    public EmailDomainCreateValidator(
+    public EmailDomainCreateModelValidator(
         IServiceProvider provider)
     {
         ClassLevelCascadeMode = CascadeMode.Stop;
@@ -18,6 +18,6 @@ public sealed class EmailDomainCreateValidator
             .SetValidator(provider.GetService<EmailDomainModelValidator>());
 
         RuleFor(x => x)
-            .SetValidator(provider.GetService<EmailDomainCreateDbValidator>());
+            .SetValidator(provider.GetService<Create.EmailDomainCreateDbValidator>());
     }
 }
