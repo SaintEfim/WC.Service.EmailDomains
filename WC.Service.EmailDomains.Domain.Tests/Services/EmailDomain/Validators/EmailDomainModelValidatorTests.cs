@@ -21,6 +21,19 @@ public class EmailDomainModelValidatorTests
     }
 
     [Fact]
+    public Task EmailDomain_Positive_Model_Validator()
+    {
+        return Check_Main_Data(NewModelFunc,
+            r => r.ShouldNotHaveAnyValidationErrors());
+
+        EmailDomainModel NewModelFunc()
+        {
+            var data = EmailDomainData.EmailDomainModel();
+            return data;
+        }
+    }
+
+    [Fact]
     public Task EmailDomain_Negative_DomainName_Empty()
     {
         return Check_Main_Data(NewModelFunc,

@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using WC.Service.EmailDomains.Data.Repositories;
 using WC.Service.EmailDomains.Domain.Models;
 
 namespace WC.Service.EmailDomains.Domain.Services.EmailDomain.Validators.Create;
@@ -6,7 +7,7 @@ namespace WC.Service.EmailDomains.Domain.Services.EmailDomain.Validators.Create;
 public sealed class EmailDomainCreateDbValidator : AbstractValidator<EmailDomainModel>
 {
     public EmailDomainCreateDbValidator(
-        IEmailDomainProvider emailDomainProvider)
+        IEmailDomainRepository repository)
     {
         RuleFor(x => x)
             .CustomAsync(async (
@@ -14,7 +15,7 @@ public sealed class EmailDomainCreateDbValidator : AbstractValidator<EmailDomain
                 context,
                 cancellationToken) =>
             {
-                var positions = await emailDomainProvider.Get(cancellationToken: cancellationToken);
+                var positions = await repository.Get(cancellationToken: cancellationToken);
 
                 var duplicatePosition = positions.Any(x => x.DomainName == emailDomain.DomainName);
 
