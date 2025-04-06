@@ -24,6 +24,6 @@ public class EmailDomainsDataPostgreSqlModule : Module
                 .CreateDbContext())
             .As<EmailDomainDbContext>()
             .As<DbContext>()
-            .InstancePerLifetimeScope();
+            .InstancePerDependency();
     }
 }
